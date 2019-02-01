@@ -1,0 +1,93 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'ACUERDOS'" [icon]="'fa-file'"></app-page-header>
+
+  <div class="page-header">
+    <h1>Subida de Archivos de Convenio con la Empresas</h1>
+    <hr>
+  </div>
+
+  <form class="form-horizontal">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend></legend>
+
+
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="selectbasic">Entidades: </label>
+        <div class="col-md-4">
+          <select id="selectbasic" name="selectbasic" class="form-control">
+            <option value="1">SENESYT</option>
+            <option value="2">ESPE</option>
+            <option value="2">Escuela Gotitas del Saber</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="selectbasic">Proyectos: </label>
+        <div class="col-md-4">
+          <select id="selectbasic" name="selectbasic" class="form-control">
+            <option value="1">Página web para escuela</option>
+            <option value="2">Sistema de Control Barrial</option>
+            <option value="2">Sistema de Facturación de Procesos Barriales</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Multiple Radios -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="radios">Estado:</label>
+        <div class="col-md-4">
+          <div class="radio">
+            <label for="radios-0">
+              <input type="radio" name="radios" id="radios-0" value="1" checked="checked"> Activo
+            </label>
+          </div>
+          <div class="radio">
+            <label for="radios-1">
+              <input type="radio" name="radios" id="radios-1" value="2"> Desactivo
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- File Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="filebutton">Archivo 1:</label>
+        <div class="col-md-4">
+          <input id="filebutton" name="filebutton" class="input-file" type="file">
+        </div>
+      </div>
+
+      <!-- File Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="filebutton">Archivo 2:</label>
+        <div class="col-md-4">
+          <input id="filebutton" name="filebutton" class="input-file" type="file">
+        </div>
+      </div>
+
+      <!-- File Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="filebutton">Archivo 3:</label>
+        <div class="col-md-4">
+          <input id="filebutton" name="filebutton" class="input-file" type="file">
+        </div>
+      </div>
+
+         <!-- Button -->
+         <div class="form-group">
+            <label class="col-md-4 control-label" for="singlebutton"></label>
+            <div class="col-md-4">
+              <button id="singlebutton" name="singlebutton" class="btn btn-info">Guardar</button>
+            </div>
+          </div>
+
+    </fieldset>
+  </form>
+
+
+</div>

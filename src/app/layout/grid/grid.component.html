@@ -1,0 +1,81 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'PROYECTOS'" [icon]="'fa-wrench'"></app-page-header>
+
+    
+    <div class="page-header">
+            <h1>Formulario para la creación de Proyectos</h1>
+            <hr>
+        </div>
+
+        <form class="form-horizontal">
+                <fieldset>
+                
+                <!-- Form Name -->
+                <legend></legend>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="textinput">Tema de Proyecto:</label>  
+                  <div class="col-md-5">
+                  <input id="textinput" name="textinput" type="text" placeholder="Introducir el nombre del tema " class="form-control input-md" required="">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="textinput">Horas:</label>  
+                  <div class="col-md-5">
+                  <input id="textinput" name="textinput" type="text" placeholder="Introducir el número de horas" class="form-control input-md" required="">
+                    
+                  </div>
+                </div>
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="textinput">Fecha de Inicio:</label>  
+                  <div class="col-md-5">
+                  <input id="textinput" name="textinput" type="date" placeholder="Introducir fecha inicio" class="form-control input-md" required="">
+                    
+                  </div>
+                </div>
+          
+
+                
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="textinput">Fecha Fin:</label>  
+                  <div class="col-md-5">
+                  <input id="textinput" name="textinput" type="date" placeholder="Introducir fecha fin" class="form-control input-md" required="">
+                    
+                  </div>
+                </div>
+                
+                <!-- File Button --> 
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="filebutton">Archivo: </label>
+                  <div class="col-md-4">
+                    <input id="filebutton" name="filebutton" class="input-file" type="file">
+                  </div>
+                </div>
+                                         
+          
+                
+                <!-- Button -->
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="singlebutton"></label>
+                  <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-info">Guardar</button>
+                  </div>
+                </div>
+                
+             
+
+                </fieldset>
+                </form>
+                
+                
+
+
+    <!-- /.row -->
+</div>
