@@ -32,7 +32,7 @@ export class AgreementService {
       map(this.extractData));
   }
 
-  addProduct(agreement): Observable<any> {
+  addAgreement(agreement): Observable<any> {
     console.log(agreement);
     return this.http.post<any>(url + 'agreements', JSON.stringify(agreement), httpOptions).pipe(
       tap((product) => console.log(`added agreements w/ id=${agreement.id}`)),
@@ -41,7 +41,7 @@ export class AgreementService {
   }
 
   updateAgreement(id, agreement): Observable<any> {
-    return this.http.put(url + 'products/' + id, JSON.stringify(agreement), httpOptions).pipe(
+    return this.http.put(url + 'agreements/', JSON.stringify(agreement), httpOptions).pipe(
       tap(_ => console.log(`updated agreement id=${id}`)),
       catchError(this.handleError<any>('updateAgreement'))
     );
