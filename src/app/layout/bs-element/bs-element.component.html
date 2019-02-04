@@ -18,7 +18,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Nombre:</label>
                 <div class="col-md-5">
-                    <input id="textinput" name="textinput" type="text" placeholder="Introducir el nombre " class="form-control input-md" required="">
+                    <input [(ngModel)]="coordinatorData.person.name" id="textinput" name="textinput" type="text"
+                        placeholder="Introducir el nombre " class="form-control input-md" required="true">
 
                 </div>
             </div>
@@ -27,7 +28,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Apellido:</label>
                 <div class="col-md-5">
-                    <input id="textinput" name="textinput" type="text" placeholder="Introducir el apellido" class="form-control input-md" required="">
+                    <input [(ngModel)]="coordinatorData.person.lastname" id="textinput" name="textinput" type="text"
+                        placeholder="Introducir el apellido" class="form-control input-md" required="true">
 
                 </div>
             </div>
@@ -36,7 +38,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Cédula:</label>
                 <div class="col-md-5">
-                    <input id="textinput" name="textinput" type="text" placeholder="Introducir la cédula" class="form-control input-md" required="">
+                    <input [(ngModel)]="coordinatorData.person.dni" id="textinput" name="textinput" type="number"
+                        placeholder="Introducir la cédula" class="form-control input-md" required="true">
 
                 </div>
             </div>
@@ -47,7 +50,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Edad:</label>
                 <div class="col-md-5">
-                    <input id="textinput" name="textinput" type="text" placeholder="Introducir la edad" class="form-control input-md" required="">
+                    <input [(ngModel)]="coordinatorData.person.age" id="textinput" name="textinput" type="number"
+                        placeholder="Introducir la edad" class="form-control input-md" required="true">
 
                 </div>
             </div>
@@ -57,7 +61,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textarea">Dirección: </label>
                 <div class="col-md-5">
-                    <textarea rows="5" class="form-control" id="textarea" name="textarea"></textarea>
+                    <textarea [(ngModel)]="coordinatorData.person.address" rows="5" class="form-control" id="textarea"
+                        name="textarea" required="true"></textarea>
                 </div>
             </div>
 
@@ -66,7 +71,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Celular:</label>
                 <div class="col-md-5">
-                    <input id="textinput" name="textinput" type="text" placeholder="Introducir el celular" class="form-control input-md" required="">
+                    <input [(ngModel)]="coordinatorData.person.cellphone" id="textinput" name="textinput" type="number"
+                        placeholder="Introducir el celular" class="form-control input-md" required="true">
 
                 </div>
             </div>
@@ -75,7 +81,8 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Email:</label>
                 <div class="col-md-5">
-                    <input id="textinput" name="textinput" type="text" placeholder="Introducir el email" class="form-control input-md" required="">
+                    <input [(ngModel)]="coordinatorData.person.email" id="textinput" name="textinput" type="email"
+                        placeholder="Introducir el email" class="form-control input-md" required="true">
 
                 </div>
             </div>
@@ -84,9 +91,10 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="singlebutton"></label>
                 <div class="col-md-4">
-                    <button id="singlebutton" name="singlebutton" class="btn btn-info">Guardar</button>
+                    <button id="singlebutton" name="singlebutton" class="btn btn-info" (click)="addCoordinator()">Guardar</button>
                 </div>
             </div>
+
 
 
 

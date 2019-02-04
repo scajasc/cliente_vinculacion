@@ -8,13 +8,15 @@ import { LayoutComponent } from './layout.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { EmpresaComponent } from './empresa/empresa.component';
+import { FormModule } from './form/form.module';
 
 @NgModule({
     imports: [
         CommonModule,
         LayoutRoutingModule,
         TranslateModule,
-        NgbDropdownModule
+        NgbDropdownModule,
+        FormModule
     ],
     declarations: [LayoutComponent, SidebarComponent, HeaderComponent, EmpresaComponent]
 })
