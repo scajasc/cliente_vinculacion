@@ -17,8 +17,8 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Nombre:</label>
         <div class="col-md-5">
-          <input id="textinput" name="textinput" type="text" placeholder="Introducir nombre de la empresa" class="form-control input-md"
-            required="">
+          <input [(ngModel)]="data.entity.name" id="textinput" name="textinput" type="text" placeholder="Introducir nombre de la empresa" class="form-control input-md"
+            required="true">
 
         </div>
       </div>
@@ -27,10 +27,20 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="textarea">Dirección: </label>
         <div class="col-md-5">
-          <textarea rows="5" class="form-control" id="textarea" name="textarea"></textarea>
+          <textarea [(ngModel)]="data.entity.address" rows="5" class="form-control" id="textarea" name="textarea" required="true"></textarea>
         </div>
       </div>
 
+      <!-- Textarea -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="selectbasic">Tipo de Entidad: </label>
+        <div class="col-md-4">
+          <select id="selectbasic" name="selectbasic" class="form-control">
+            <option value="1">Publica</option>
+            <option value="2">Privada</option>
+          </select>
+        </div>
+      </div>
 
 
       <!-- Text input-->
@@ -38,7 +48,7 @@
         <label class="col-md-4 control-label" for="textinput">Correo:</label>
         <div class="col-md-5">
 
-          <input id="textinput" name="textinput" type="text" placeholder="Introducir correo de la empresa" class="form-control input-md">
+          <input [(ngModel)]="data.entity.email" id="textinput" name="textinput" type="email" placeholder="Introducir correo de la empresa" class="form-control input-md">
 
         </div>
       </div>
@@ -48,7 +58,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Teléfono:</label>
         <div class="col-md-5">
-          <input id="textinput" name="textinput" type="text" placeholder="Introducir teléfono de la empresa:" class="form-control input-md">
+          <input [(ngModel)]="data.entity.telephone" id="textinput" name="textinput" type="number" placeholder="Introducir teléfono de la empresa:" class="form-control input-md">
 
         </div>
       </div>
@@ -57,7 +67,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="singlebutton"></label>
         <div class="col-md-4">
-          <button id="singlebutton" name="singlebutton" class="btn btn-info">Guardar</button>
+          <button id="singlebutton" name="singlebutton" class="btn btn-info" (click)="addEntity()">Guardar</button>
         </div>
       </div>
 

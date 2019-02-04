@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { EntityService } from 'src/app/providers/entity/entity.service';
 
 @Component({
     selector: 'app-form',
@@ -8,7 +9,32 @@ import { routerTransition } from '../../router.animations';
     animations: [routerTransition()]
 })
 export class FormComponent implements OnInit {
-    constructor() {}
+    constructor(
+        public restEntity: EntityService
+    ) {
 
-    ngOnInit() {}
+    }
+    //variables
+    data = {
+        entity:
+        {
+            entity_type_id: 1,
+            name: "",
+            address: "",
+            email: "",
+            telephone: ""
+        }
+    }
+    ngOnInit() {
+
+    }
+
+    addEntity() {
+        this.restEntity.addEntity(this.data).subscribe((result) => {
+            console.log(result);
+        }, (err) => {
+            console.log(err);
+        });
+    }
+
 }

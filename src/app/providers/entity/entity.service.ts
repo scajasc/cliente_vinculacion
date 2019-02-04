@@ -31,6 +31,12 @@ export class EntityService {
       map(this.extractData));
   }
 
+  getEntity_types(): Observable<any> {
+    return this.http.get(url + 'entity_type').pipe(
+      map(this.extractData));
+  }
+
+
   addEntity(entity): Observable<any> {
     console.log(entity);
     return this.http.post<any>(url + 'entities', JSON.stringify(entity), httpOptions).pipe(
