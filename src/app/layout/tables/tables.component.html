@@ -7,76 +7,53 @@
                     Entidad
                 </div>
                 <div class="card-body table-responsive">
-                    <table class="table">
+                    <table id="1" class="table">
                         <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Nombre Entidad</th>
-                            <th>Dirección</th>
-                            <th>Télefono</th>
-                        </tr>
+                            <tr>
+                                <th>id</th>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Télefono</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                            <tr *ngFor="let entity of entities; let i=index;">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{entity.name}}</td>
+                                <td>{{entity.email}}</td>
+                                <td>{{entity.telephone}}</td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
             </div>
-           
+
             <div class="card mb-3">
                 <div class="card-header">Estudiantes</div>
                 <div class="card-body table-responsive">
                     <table class="table table-bordered">
                         <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Primer Nombre</th>
-                            <th>Apellido</th>
-                            <th>Carrera</th>
-                        </tr>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Carrera</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                       
+                            <tr *ngFor="let student of students; let i=index;">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{student.name}}</td>
+                                <td>{{student.lastname}}</td>
+                                <td>{{student.cellphone}}</td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
             </div>
-        
+
         </div>
         <div class="col col-xl-6 col-lg-12">
             <div class="card mb-3">
@@ -84,32 +61,20 @@
                 <div class="card-body table-responsive">
                     <table class="table table-inverse">
                         <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Nombre </th>
-                            <th>Proyecto</th>
-                            <th>Estado</th>
-                        </tr>
+                            <tr>
+                                <th>#</th>
+                                <th>Entidad Beneficiada </th>
+                                <th>Tipo de entidad</th>
+                                <th>Proyecto</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                            <tr *ngFor="let agreement of agreements; let i=index;">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{agreement.name}}</td>
+                                <td>{{agreement.name_type}}</td>
+                                <td>{{agreement.theme}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -119,64 +84,27 @@
                 <div class="card-body table-responsive">
                     <table class="table table-hover table-striped">
                         <thead>
-                        <tr>
-                            <th>Tema</th>
-                            <th>Horas</th>
-                            <th>Fecha de Inicio</th>
-                            <th>Fecha de Fin</th>
-                        </tr>
+                            <tr>
+                                <th>id</th>
+                                <th>Tema</th>
+                                <th>Horas</th>
+                                <th>Fecha de Inicio</th>
+                                <th>Fecha de Fin</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
 
-                            
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                       
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+                            <tr *ngFor="let project of projects; let i=index;">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{project.theme}}</td>
+                                <td>{{project.hours}}</td>
+                                <td>{{project.start_date}}</td>
+                                <td>{{project.end_date}}</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-
-
-
-
-
-        
         </div>
     </div>
 </div>
