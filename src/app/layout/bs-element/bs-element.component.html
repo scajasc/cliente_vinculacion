@@ -18,7 +18,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Nombre:</label>
                 <div class="col-md-5">
-                    <input [(ngModel)]="coordinatorData.person.name" id="textinput" name="textinput" type="text"
+                    <input (input)="inputValidator($event)" [(ngModel)]="coordinatorData.person.name" id="textinput" name="textinput" type="text"
                         placeholder="Introducir el nombre " class="form-control input-md" required="true">
 
                 </div>
@@ -28,7 +28,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Apellido:</label>
                 <div class="col-md-5">
-                    <input [(ngModel)]="coordinatorData.person.lastname" id="textinput" name="textinput" type="text"
+                    <input (input)="inputValidator($event)" [(ngModel)]="coordinatorData.person.lastname" id="textinput" name="textinput" type="text"
                         placeholder="Introducir el apellido" class="form-control input-md" required="true">
 
                 </div>

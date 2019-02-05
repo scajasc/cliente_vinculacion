@@ -1,3 +1,4 @@
+
 <div [@routerTransition]>
   <app-page-header [heading]="'EMPRESA'" [icon]="'fa-building'"></app-page-header>
 
@@ -7,21 +8,28 @@
     <hr>
   </div>
 
-  <form class="form-horizontal">
+  <form   class="form-horizontal" >
     <fieldset>
 
       <!-- Form Name -->
       <legend></legend>
-
+     
       <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Nombre:</label>
         <div class="col-md-5">
-          <input [(ngModel)]="data.entity.name" id="textinput" name="textinput" type="text" placeholder="Introducir nombre de la empresa" class="form-control input-md"
-            required="true">
-
+          <input  (input)="inputValidator($event)" [(ngModel)]="data.entity.name" id="name" name="name" type="text" placeholder="Introducir nombre de la empresa" class="form-control input-md"
+            required="true" onkeypress="return soloLetras(event)">
+           
+           <div>
+            <div >Nombre es Requerido</div>
+           </div>
         </div>
+        
+                 
       </div>
+ 
+     
 
       <!-- Textarea -->
       <div class="form-group">
@@ -58,7 +66,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Teléfono:</label>
         <div class="col-md-5">
-          <input [(ngModel)]="data.entity.telephone" id="textinput" name="textinput" type="number" placeholder="Introducir teléfono de la empresa:" class="form-control input-md">
+          <input [(ngModel)]="data.entity.telephone" id="textinput" name="textinput" type="number" placeholder="Introducir teléfono de la empresa:" class="form-control input-md" maxlength="1">
 
         </div>
       </div>
@@ -73,3 +81,4 @@
 
     </fieldset>
   </form>
+

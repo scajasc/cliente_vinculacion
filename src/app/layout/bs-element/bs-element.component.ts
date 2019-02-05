@@ -42,4 +42,14 @@ export class BsElementComponent implements OnInit {
             console.log(err);
           });
     }
+
+    public inputValidator(event: any) {
+       
+        const pattern = /^[a-zA-Z]*$/;           
+        if (!pattern.test(event.target.value)) {
+          event.target.value = event.target.value.replace(/[^a-zA-Z]/g, "");
+          
+    
+        }
+      }
 }

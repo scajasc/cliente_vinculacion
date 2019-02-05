@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import { EnterpriseComponent } from './enterprise/enterprise.component';
 import { EmpresaModule } from './layout/empresa.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
@@ -31,6 +31,7 @@ export const createTranslateLoader = (http: HttpClient) => {
         BrowserAnimationsModule,
         HttpClientModule,
         FormsModule,
+        ReactiveFormsModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

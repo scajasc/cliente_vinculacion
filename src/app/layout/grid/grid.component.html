@@ -56,7 +56,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Tema de Proyecto:</label>
         <div class="col-md-5">
-          <input [(ngModel)]="data.project.theme" id="textinput" name="textinput" type="text" placeholder="Introducir el nombre del tema " class="form-control input-md"
+          <input (input)="inputValidator($event)" [(ngModel)]="data.project.theme" id="textinput" name="textinput" type="text" placeholder="Introducir el nombre del tema " class="form-control input-md"
             required="">
 
         </div>
@@ -66,7 +66,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Horas:</label>
         <div class="col-md-5">
-          <input [(ngModel)]="data.project.hours" id="textinput" name="textinput" type="text" placeholder="Introducir el número de horas" class="form-control input-md"
+          <input [(ngModel)]="data.project.hours" id="textinput" name="textinput" type="number" placeholder="Introducir el número de horas" class="form-control input-md"
             required="">
 
         </div>
