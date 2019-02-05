@@ -17,6 +17,7 @@ export class GridComponent implements OnInit {
     ) {
 
     }
+    
     data = {
         project:
         {
@@ -31,12 +32,9 @@ export class GridComponent implements OnInit {
         }
     }
 
-    students:any = [];
-    tutors:any = [];
-    coordinators:any = [];
-
-    opcionSeleccionado: string  = '0';
-    verSeleccion: string        = '';
+    students: any = [];
+    tutors: any = [];
+    coordinators: any = [];
 
 
     ngOnInit() {
@@ -69,7 +67,7 @@ export class GridComponent implements OnInit {
         });
     }
 
-    addProject(id_student, id_tutor, id_coordinator){
+    addProject(id_student, id_tutor, id_coordinator) {
         this.data.project.student_id = id_student;
         this.data.project.coordinator_id = id_coordinator;
         this.data.project.tutor_id = id_tutor;
@@ -82,7 +80,7 @@ export class GridComponent implements OnInit {
 
     }
 
-    
+
 }
 
 
