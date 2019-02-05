@@ -226,9 +226,24 @@ export class ChartsComponent implements OnInit {
 
         this.restAgreement.addAgreement(this.data).subscribe((result) => {
             console.log(result);
+            this.resetForm();
         }, (err) => {
             console.log(err);
         });
 
+    }
+
+    resetForm(){
+        this.data = {
+            agreement:
+            {
+                project_id: "",
+                entity_id: "",
+                state: "",
+                route_file1: "/",
+                route_file2: "/",
+                route_file3: "/"
+            }
+        }
     }
 }

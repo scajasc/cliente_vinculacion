@@ -17,7 +17,7 @@ export class GridComponent implements OnInit {
     ) {
 
     }
-    
+
     data = {
         project:
         {
@@ -74,13 +74,28 @@ export class GridComponent implements OnInit {
 
         this.restProject.addProject(this.data).subscribe((result) => {
             console.log(result);
+            this.resetForm();
         }, (err) => {
             console.log(err);
         });
 
     }
 
-
+    resetForm(){
+        this.data = {
+            project:
+            {
+                student_id: "",
+                coordinator_id: "",
+                tutor_id: "",
+                theme: "",
+                hours: "",
+                start_date: "",
+                end_date: "",
+                route_file: "/"
+            }
+        }
+    }
 }
 
 
