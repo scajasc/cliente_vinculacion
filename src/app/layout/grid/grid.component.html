@@ -13,11 +13,50 @@
       <!-- Form Name -->
       <legend></legend>
 
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="selectbasic">Estudiante: </label>
+        <div class="col-md-4">
+            <select #selectedStudent  [(ngModel)]="students" id="selectbasic" name="selectbasic" class="form-control">
+                <option value="">Seleccione...</option>
+                <option *ngFor="let student of students" [value]="student.id">
+                  {{student.lastname }} {{student.name }}
+                </option>
+              </select>
+        </div>
+      </div>
+
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="selectbasic">Coordinador: </label>
+        <div class="col-md-4">
+          <select #selectedCategory  [(ngModel)]="coordinators" id="selectbasic" name="selectbasic" class="form-control">
+            <option value="0">Seleccione...</option>
+            <option *ngFor="let coordinator of coordinators" [value]="coordinator.id">
+              {{coordinator.lastname }} {{coordinator.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="selectbasic">Tutor: </label>
+        <div class="col-md-4">
+            <select #selectedTutor  [(ngModel)]="tutors" id="selectbasic" name="selectbasic" class="form-control">
+                <option value="0">Seleccione...</option>
+                <option *ngFor="let tutor of tutors" [value]="tutor.id">
+                  {{tutor.lastname }} {{tutor.name }}
+                </option>
+              </select>
+        </div>
+      </div>
+
       <!-- Text input-->
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Tema de Proyecto:</label>
         <div class="col-md-5">
-          <input id="textinput" name="textinput" type="text" placeholder="Introducir el nombre del tema " class="form-control input-md"
+          <input [(ngModel)]="data.project.theme" id="textinput" name="textinput" type="text" placeholder="Introducir el nombre del tema " class="form-control input-md"
             required="">
 
         </div>
@@ -27,7 +66,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Horas:</label>
         <div class="col-md-5">
-          <input id="textinput" name="textinput" type="text" placeholder="Introducir el número de horas" class="form-control input-md"
+          <input [(ngModel)]="data.project.hours" id="textinput" name="textinput" type="text" placeholder="Introducir el número de horas" class="form-control input-md"
             required="">
 
         </div>
@@ -37,7 +76,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Fecha de Inicio:</label>
         <div class="col-md-5">
-          <input id="textinput" name="textinput" type="date" placeholder="Introducir fecha inicio" class="form-control input-md"
+          <input [(ngModel)]="data.project.start_date" id="textinput" name="textinput" type="date" placeholder="Introducir fecha inicio" class="form-control input-md"
             required="">
 
         </div>
@@ -49,19 +88,19 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="textinput">Fecha Fin:</label>
         <div class="col-md-5">
-          <input id="textinput" name="textinput" type="date" placeholder="Introducir fecha fin" class="form-control input-md"
+          <input [(ngModel)]="data.project.end_date" id="textinput" name="textinput" type="date" placeholder="Introducir fecha fin" class="form-control input-md"
             required="">
 
         </div>
       </div>
 
-      <!-- File Button -->
+      <!-- File Button 
       <div class="form-group">
         <label class="col-md-4 control-label" for="filebutton">Archivo: </label>
         <div class="col-md-4">
           <input id="filebutton" name="filebutton" class="input-file" type="file">
         </div>
-      </div>
+      </div>-->
 
 
 
@@ -69,7 +108,7 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="singlebutton"></label>
         <div class="col-md-4">
-          <button id="singlebutton" name="singlebutton" class="btn btn-info">Guardar</button>
+          <button id="singlebutton" name="singlebutton" class="btn btn-info" (click)="addProject(selectedStudent.value, selectedTutor.value ,selectedCategory.value)">Guardar</button>
         </div>
       </div>
 

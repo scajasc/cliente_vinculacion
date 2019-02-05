@@ -31,7 +31,20 @@ export class PersonService {
       map(this.extractData));
   }
 
+  getStudents(): Observable<any> {
+    return this.http.get(url + 'students').pipe(
+      map(this.extractData));
+  }
 
+  getTutors(): Observable<any> {
+    return this.http.get(url + 'tutors').pipe(
+      map(this.extractData));
+  }
+
+  getCoordinators(): Observable<any> {
+    return this.http.get(url + 'coordinators').pipe(
+      map(this.extractData));
+  }
   private extractData(res: Response) {
     let body = res;
     return body || {};
