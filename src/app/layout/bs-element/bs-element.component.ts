@@ -13,7 +13,7 @@ export class BsElementComponent implements OnInit {
     coordinatorData = {
         person: {
             name: "",
-            lastname: "",
+            last_name: "",
             dni: "",
             age : "",
             address : "",

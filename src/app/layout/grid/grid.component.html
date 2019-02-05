@@ -20,7 +20,7 @@
             <select #selectedStudent  [(ngModel)]="students" id="selectbasic" name="selectbasic" class="form-control">
                 <option value="">Seleccione...</option>
                 <option *ngFor="let student of students" [value]="student.id">
-                  {{student.lastname }} {{student.name }}
+                  {{student.last_name }} {{student.name }}
                 </option>
               </select>
         </div>
@@ -33,7 +33,7 @@
           <select #selectedCategory  [(ngModel)]="coordinators" id="selectbasic" name="selectbasic" class="form-control">
             <option value="0">Seleccione...</option>
             <option *ngFor="let coordinator of coordinators" [value]="coordinator.id">
-              {{coordinator.lastname }} {{coordinator.name }}
+              {{coordinator.last_name }} {{coordinator.name }}
             </option>
           </select>
         </div>
@@ -46,7 +46,7 @@
             <select #selectedTutor  [(ngModel)]="tutors" id="selectbasic" name="selectbasic" class="form-control">
                 <option value="0">Seleccione...</option>
                 <option *ngFor="let tutor of tutors" [value]="tutor.id">
-                  {{tutor.lastname }} {{tutor.name }}
+                  {{tutor.last_name }} {{tutor.name }}
                 </option>
               </select>
         </div>
