@@ -17,22 +17,24 @@
       <div class="form-group">
         <label class="col-md-4 control-label" for="selectbasic">Entidades: </label>
         <div class="col-md-4">
-          <select id="selectbasic" name="selectbasic" class="form-control">
-            <option value="1">SENESYT</option>
-            <option value="2">ESPE</option>
-            <option value="2">Escuela Gotitas del Saber</option>
+          <select #selectedEntity [(ngModel)]="entities" id="selectbasic" name="selectbasic" class="form-control">
+            <option value="">Seleccione...</option>
+            <option *ngFor="let entity of entities" [value]="entity.id">
+              {{entity.name}}
+            </option>
           </select>
         </div>
       </div>
 
       <!-- Select Basic -->
       <div class="form-group">
-        <label class="col-md-4 control-label" for="selectbasic">Proyectos: </label>
+        <label class="col-md-4 control-label" for="selectbasic">Proyecto: </label>
         <div class="col-md-4">
-          <select id="selectbasic" name="selectbasic" class="form-control">
-            <option value="1">Página web para escuela</option>
-            <option value="2">Sistema de Control Barrial</option>
-            <option value="2">Sistema de Facturación de Procesos Barriales</option>
+          <select #selectedProject [(ngModel)]="projects" id="selectbasic" name="selectbasic" class="form-control">
+            <option value="">Seleccione...</option>
+            <option *ngFor="let project of projects" [value]="project.id">
+              {{project.theme }}
+            </option>
           </select>
         </div>
       </div>
@@ -43,48 +45,48 @@
         <div class="col-md-4">
           <div class="radio">
             <label for="radios-0">
-              <input type="radio" name="radios" id="radios-0" value="1" checked="checked"> Activo
+              <input type="radio" name="radios" id="radios-0" value="1" checked="checked" (click)="setToRentControl(true)"> Activo
             </label>
           </div>
           <div class="radio">
             <label for="radios-1">
-              <input type="radio" name="radios" id="radios-1" value="2"> Desactivo
+              <input type="radio" name="radios" id="radios-1" value="2" (click)="setToRentControl(false)"> Inactivo
             </label>
           </div>
         </div>
       </div>
 
-      <!-- File Button -->
+      <!-- File Button 
       <div class="form-group">
         <label class="col-md-4 control-label" for="filebutton">Archivo 1:</label>
         <div class="col-md-4">
           <input id="filebutton" name="filebutton" class="input-file" type="file">
         </div>
-      </div>
+      </div>-->
 
-      <!-- File Button -->
+      <!-- File Button 
       <div class="form-group">
         <label class="col-md-4 control-label" for="filebutton">Archivo 2:</label>
         <div class="col-md-4">
           <input id="filebutton" name="filebutton" class="input-file" type="file">
         </div>
-      </div>
+      </div>-->
 
-      <!-- File Button -->
+      <!-- File Button 
       <div class="form-group">
         <label class="col-md-4 control-label" for="filebutton">Archivo 3:</label>
         <div class="col-md-4">
           <input id="filebutton" name="filebutton" class="input-file" type="file">
         </div>
-      </div>
+      </div>-->
 
-         <!-- Button -->
-         <div class="form-group">
-            <label class="col-md-4 control-label" for="singlebutton"></label>
-            <div class="col-md-4">
-              <button id="singlebutton" name="singlebutton" class="btn btn-info">Guardar</button>
-            </div>
-          </div>
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="singlebutton"></label>
+        <div class="col-md-4">
+          <button id="singlebutton" name="singlebutton" class="btn btn-info" (click)="addProject(selectedProject.value, selectedEntity.value)">Guardar</button>
+        </div>
+      </div>
 
     </fieldset>
   </form>

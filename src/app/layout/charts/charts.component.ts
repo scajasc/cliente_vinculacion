@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { ProjectService } from 'src/app/providers/project/project.service';
+import { EntityService } from 'src/app/providers/entity/entity.service';
+import { AgreementService } from 'src/app/providers/agreement/agreement.service';
 
 @Component({
     selector: 'app-charts',
@@ -158,7 +161,28 @@ export class ChartsComponent implements OnInit {
          */
     }
 
-    constructor() {}
+    constructor(
+        public restProject: ProjectService,
+        public restEntity: EntityService,
+        public restAgreement: AgreementService
+    ) {
+
+    }
+
+    data = {
+        agreement:
+        {
+            project_id: "",
+            entity_id: "",
+            state: "",
+            route_file1: "/",
+            route_file2: "/",
+            route_file3: "/"
+        }
+    }
+
+    projects: any = [];
+    entities: any = [];
 
     ngOnInit() {
         this.barChartType = 'bar';
@@ -170,5 +194,56 @@ export class ChartsComponent implements OnInit {
         this.polarAreaChartType = 'polarArea';
         this.lineChartLegend = true;
         this.lineChartType = 'line';
+
+        //
+        this.getEntities();
+        this.getProjects();
+    }
+
+    getEntities() {
+        this.entities = [];
+        this.restEntity.getEntities().subscribe((data: {}) => {
+            console.log(data);
+            this.entities = data;
+        });
+    }
+
+    getProjects() {
+        this.projects = [];
+        this.restProject.getProjects().subscribe((data: {}) => {
+            console.log(data);
+            this.projects = data;
+        });
+    }
+
+    setToRentControl(value) {
+        this.data.agreement.state=value;
+    }
+
+    addProject(id_project, id_entity) {
+        this.data.agreement.entity_id = id_entity;
+        this.data.agreement.project_id = id_project;
+
+        this.restAgreement.addAgreement(this.data).subscribe((result) => {
+            console.log(result);
+            this.resetForm();
+        }, (err) => {
+            console.log(err);
+        });
+
+    }
+
+    resetForm(){
+        this.data = {
+            agreement:
+            {
+                project_id: "",
+                entity_id: "",
+                state: "",
+                route_file1: "/",
+                route_file2: "/",
+                route_file3: "/"
+            }
+        }
     }
 }
